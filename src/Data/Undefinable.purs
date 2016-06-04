@@ -1,14 +1,15 @@
 -- | This module defines a representation for undefined.
 module Data.Undefinable
-  ( Undefinable()
+  ( Undefinable
   , toMaybe
   , toUndefinable
   ) where
 
-import Prelude (Eq, Ord, Show, (<<<), compare, eq, show)
+import Prelude (class Eq, class Ord, class Show, (<<<), compare, eq, show)
 
-import Data.Function (Fn3(), on, runFn3)
-import Data.Maybe (Maybe(..), maybe)
+import Data.Function (on)
+import Data.Function.Uncurried (Fn3, runFn3)
+import Data.Maybe (Maybe(Just,Nothing), maybe)
 
 -- | This type constructor defines a representation for a value that may
 -- | or may not be undefined.
