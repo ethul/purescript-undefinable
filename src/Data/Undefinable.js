@@ -1,7 +1,4 @@
-/* global exports */
 'use strict';
-
-// module Data.Undefinable
 
 exports['undefined'] = undefined;
 
