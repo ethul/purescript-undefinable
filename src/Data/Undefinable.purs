@@ -5,7 +5,7 @@ module Data.Undefinable
   , toUndefinable
   ) where
 
-import Prelude (class Eq, class Ord, class Show, (<<<), compare, eq, show)
+import Prelude (class Eq, class Ord, class Show, class Functor, (<<<), compare, eq, show, map)
 
 import Data.Function (on)
 import Data.Function.Uncurried (Fn3, runFn3)
@@ -31,6 +31,9 @@ instance eqUndefinable :: (Eq a) => Eq (Undefinable a) where
 
 instance ordUndefinable :: (Ord a) => Ord (Undefinable a) where
   compare = compare `on` toMaybe
+
+instance functorUndefinable :: Functor Undefinable where
+  map f = toUndefinable <<< map f <<< toMaybe
 
 foreign import undefined :: forall value. Undefinable value
 
