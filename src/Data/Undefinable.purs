@@ -13,7 +13,7 @@ import Data.Maybe (Maybe(Just,Nothing), maybe)
 
 -- | This type constructor defines a representation for a value that may
 -- | or may not be undefined.
-foreign import data Undefinable :: * -> *
+foreign import data Undefinable :: Type -> Type
 
 -- | Takes `undefined` to `Nothing` and a `value` to `Just value`.
 toMaybe :: forall value. Undefinable value -> Maybe value
