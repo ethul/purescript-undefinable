@@ -2,10 +2,10 @@
 
 exports['undefined'] = undefined;
 
-exports.undefinable = function(nothing, just, value){
+exports.undefinable = function undefinable(nothing, just, value){
   return value === undefined ? nothing : just(value);
 };
 
-exports.notUndefined = function(value){
+exports.notUndefined = function notUndefined(value){
   return value;
 };

@@ -2,12 +2,12 @@ module Test.Main where
 
 import Prelude
 
-import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.Console (CONSOLE, logShow)
+import Effect (Effect)
+import Effect.Console (logShow)
 import Data.Maybe (Maybe(..))
 import Data.Undefinable (toUndefinable, toMaybe)
 
-main :: Eff (console :: CONSOLE) Unit
+main :: Effect Unit
 main = do
   logShow $ toUndefinable (Nothing :: Maybe Number)
   logShow $ toUndefinable (Just 42)
